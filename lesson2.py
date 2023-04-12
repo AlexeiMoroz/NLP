@@ -32,6 +32,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from gensim.models import Word2Vec
 from sklearn import model_selection, preprocessing, linear_model
+from sklearn.metrics import accuracy_score
 
 
 def read_data_from_pkl(filename):
@@ -86,4 +87,5 @@ classifier.fit(xtrain_count, train_y)
 predictions = classifier.predict(xvalid_count)
 print(predictions)
 
+print(accuracy_score(valid_y, predictions))
 
